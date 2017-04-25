@@ -1,5 +1,7 @@
 *.class
 
+.classpath
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -12,26 +14,22 @@
 hs_err_pid*
 
 
-#-------------# 
-# Maven Files # 
-#-------------# 
 
-target#---------------------------# 
-# Anypoint Studio / Eclipse # 
-#---------------------------# 
-.studio.classpath
+target*/target/**
+
+.studio
+.classpath
 .project
 .settings
 mule-project.xml
-.mulecatalog#-----------# 
-# Mac Files # 
-#-----------# 
-.DS_Store#------------------# 
-# Derby / ActiveMQ # 
-#------------------# 
+.mule
+*/.mule/**catalog
+*/catalog/**
+.DS_Store
 activemq-data
 derby.log
 
 
 
 .DS_Store
+/velocity.log
