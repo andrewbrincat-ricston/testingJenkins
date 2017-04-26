@@ -37,6 +37,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
     <flow name="processBids" processingStrategy="highThroughputProcessing">
         <vm:inbound-endpoint exchange-pattern="one-way" path="process" doc:name="Process"/>
         <component class="com.mulesoft.EnricherAuctionComponent" doc:name="EnrichBids Java Component"/>
+        <logger message="#[mule.nodeId + ' Processed: ' + message.payload]" level="INFO" doc:name="Logger"/>
         <collection-aggregator failOnTimeout="true" doc:name="Collection Aggregator"/>
         <component class="com.mulesoft.HighestBidderAuctionComponent" doc:name="Highest Bidder Java Component"/>
         <logger message="Highest Bidder: #[payload]" level="INFO" doc:name="Log Payload"/>
