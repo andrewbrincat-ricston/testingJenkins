@@ -24,7 +24,7 @@ http://www.mulesoft.org/schema/mule/mock http://www.mulesoft.org/schema/mule/moc
                 <munit:inbound-property key="http.query.params" value="#[{'range' : '*'}]"/>
             </munit:inbound-properties>
         </munit:set>
-        <flow-ref name="retrieveOrders" doc:name="main"/>
+        <flow-ref name="retrieveOrders" doc:name="retrieveOrders"/>
         <munit:assert-true condition="#[message.payload is java.util.List]" doc:name="Assert True"/>
         <munit:assert-true condition="#[message.payload.size() &gt; 0]" doc:name="Assert True"/>
     </munit:test>

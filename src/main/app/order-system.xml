@@ -11,7 +11,7 @@ http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/cu
 http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd">
     <http:listener-config name="HTTP_Listener_Configuration_8086" host="0.0.0.0" port="8086" doc:name="HTTP Listener Configuration"/>
     <ws:consumer-config name="Web_Service_Consumer" service="OrderServiceService" port="OrderServicePort" serviceAddress="http://training-u.cloudhub.io/advanced/orders" wsdlLocation="orders.wsdl" doc:name="Web Service Consumer"/>
-    <flow name="main">
+    <flow name="main-orders">
         <http:listener config-ref="HTTP_Listener_Configuration_8086" path="/" allowedMethods="GET" doc:name="HTTP"/>
         <flow-ref name="retrieveOrders" doc:name="retrieveOrders"/>
         <flow-ref name="processOrders" doc:name="proce"/>
